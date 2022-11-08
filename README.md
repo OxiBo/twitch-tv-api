@@ -1,1 +1,1 @@
-# twitch-tv-api-parcel
+# twitch-tv-api
