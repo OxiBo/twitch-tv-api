@@ -1,0 +1,331 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: #f3e9fc;
+  min-height: 100%;
+  height: 100%;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.mainContainer > * {
+  max-width: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header {
+  background: #9c4be7;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  min-height: 150px;
+  /*form styles*/
+}
+header #title {
+  text-align: center;
+  text-shadow: 5px 5px 0.7px rgba(50, 100, 100, 0.5);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+header #searchForm {
+  max-width: 100%;
+  text-align: center;
+  padding-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+header input#searchUser {
+  max-width: 150%;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 100%;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  outline-color: #d5e1df;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+header input#searchUser:hover {
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+/*style buttons*/
+.myButton {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  border-radius: 5px;
+  height: 30px;
+  margin: 0;
+  margin-top: 0.7px;
+  outline: none;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.myButton:hover {
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+#content,
+#result {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#content .users,
+#result .users {
+  background-color: #cea5f3;
+  min-height: 50px;
+  margin-top: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-align: center;
+}
+#content .users p.status,
+#result .users p.status {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#content .users a,
+#result .users a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #46215b;
+}
+#content .users div:nth-child(1),
+#result .users div:nth-child(1) {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 30%;
+  flex: 1 1 30%;
+}
+#content .users div:nth-child(1) img,
+#result .users div:nth-child(1) img {
+  width: 70%;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 55%;
+}
+#content .users div:nth-child(2),
+#result .users div:nth-child(2) {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 30%;
+  flex: 1 1 30%;
+}
+#content .users div:nth-child(3),
+#result .users div:nth-child(3) {
+  -webkit-box-flex: 4;
+  -ms-flex: 4 1 40%;
+  flex: 4 1 40%;
+}
+
+#content .offline,
+#result .offline {
+  background-color: #d5e1df;
+}
+
+footer {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 80%;
+}
+
+/*typeahead implementation*/
+/*https://github.com/bassjobsen/typeahead.js-bootstrap-css/blob/master/typeaheadjs.css*/
+span.twitter-typeahead .tt-menu,
+span.twitter-typeahead .tt-dropdown-menu {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 16px;
+  width: 100% !important;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 80%;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+span.twitter-typeahead .tt-suggestion {
+  display: block;
+  padding: 3px 20px;
+  /*clear: both;*/
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+
+span.twitter-typeahead .tt-suggestion.tt-cursor,
+span.twitter-typeahead .tt-suggestion:hover,
+span.twitter-typeahead .tt-suggestion:focus {
+  color: black;
+  text-decoration: none;
+  outline: 0;
+  background-color: #f3e9fc;
+}
+
+.input-group.input-group-lg span.twitter-typeahead .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 80%;
+  line-height: 1.3333333;
+  border-radius: 5px;
+}
+
+.input-group.input-group-sm span.twitter-typeahead .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 80%;
+  line-height: 1.5;
+  border-radius: 5px;
+}
+
+span.twitter-typeahead {
+  width: 100%;
+  /*display: inline-block;*/
+}
+
+.input-group span.twitter-typeahead {
+  display: block !important;
+  height: 34px;
+}
+
+.input-group span.twitter-typeahead .tt-menu,
+.input-group span.twitter-typeahead .tt-dropdown-menu {
+  top: 32px !important;
+}
+
+.input-group
+  span.twitter-typeahead:not(:first-child):not(:last-child)
+  .form-control {
+  border-radius: 0;
+}
+
+.input-group span.twitter-typeahead:first-child .form-control {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group span.twitter-typeahead:last-child .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.input-group.input-group-sm span.twitter-typeahead {
+  height: 30px;
+}
+
+.input-group.input-group-sm span.twitter-typeahead .tt-menu,
+.input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
+  top: 30px !important;
+}
+
+.input-group.input-group-lg span.twitter-typeahead {
+  height: 40px;
+}
+
+.input-group.input-group-lg span.twitter-typeahead .tt-menu,
+.input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
+  top: 46px !important;
+}
+
+/*responsive styles for small decices*/
+@media screen and (min-width: 480px) {
+  .mainContainer {
+    max-width: 80%;
+  }
+}
+/*end*/
+/*responsive styles for medium  decices*/
+@media screen and (min-width: 700px) {
+  .mainContainer {
+    max-width: 70%;
+  }
+}
+/*end*/
+/*responsive styles for medium  decices*/
+@media screen and (min-width: 1000px) {
+  .mainContainer {
+    max-width: 40%;
+  }
+}
+/*end*/
