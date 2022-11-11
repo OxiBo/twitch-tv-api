@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist"
   },
   "author": "OxiBo",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^8.0.1",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^1.6.2",
     "style-loader": "^3.3.1",
